@@ -11,27 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :season %>
-    <%= form.text_field :season %>
+  <div class="field mb-3">
+    <%= form.text_field :season, class:"form-control", placeholder:"Season" %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="field mb-3">
+    <%= form.text_field :name, class:"form-control", placeholder:"Name" %>
   </div>
 
-  <div class="field">
-    <%= form.label :max_number %>
-    <%= form.number_field :max_number %>
+  <div class="field mb-3">
+    <%= form.number_field :max_number, class:"form-control", placeholder:"Max number" %>
   </div>
 
-  <div class="field">
-    <%= form.label :notes %>
-    <%= form.text_field :notes %>
+  <div class="field mb-3">
+    <%= form.text_field :notes, class:"form-control", placeholder:"Notes" %>
   </div>
-
+  <br />
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-warning" %>
   </div>
 <% end %>

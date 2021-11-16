@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Observations</h1>
+<h2>My Observations</h2>
 
-<table>
-  <thead>
+<table class="table table-bordered table-sm table-striped">
+  <thead class="table-dark">
     <tr>
       <th>Season</th>
       <th>Name</th>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Observation', new_observation_path %>
+<%= link_to 'Add Observation', new_observation_path, class:"btn btn-warning" %>

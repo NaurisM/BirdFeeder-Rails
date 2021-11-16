@@ -1,24 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Season:</strong>
-  <%= @observation.season %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @observation.name %>
-</p>
-
-<p>
-  <strong>Max number:</strong>
-  <%= @observation.max_number %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @observation.notes %>
-</p>
-
-<%= link_to 'Edit', edit_observation_path(@observation) %> |
-<%= link_to 'Back', observations_path %>
+<div class="card" style="width: 40rem;">
+  <%= image_tag("bird.jpg") %>
+  <div class="card-body">
+    <h4 class="card-title">
+      <%= @observation.name %>
+    </h4>
+    <%= link_to 'Edit', edit_observation_path(@observation), class:"btn btn-warning btn-sm me-2" %> 
+    <%= link_to 'Back', observations_path, class:"btn btn-warning btn-sm" %>
+  </div>
+</div>
