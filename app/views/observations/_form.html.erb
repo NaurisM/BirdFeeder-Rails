@@ -12,22 +12,26 @@
   <% end %>
 
   <div class="field mb-3">
-    <%= form.text_field :season, class:"form-control", placeholder:"Season" %>
+    <%= form.label :season %>
+    <%= form.text_field :season, class:"form-control" %>
   </div>
 
   <div class="field mb-3">
-    <%= form.text_field :name, class:"form-control", placeholder:"Name" %>
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
 
   <div class="field mb-3">
-    <%= form.number_field :max_number, class:"form-control", placeholder:"Max number" %>
+    <%= form.label :max_number %>
+    <%= form.number_field :max_number, class:"form-control" %>
   </div>
 
   <div class="field mb-3">
-    <%= form.text_field :notes, class:"form-control", placeholder:"Notes" %>
+    <%= form.label :notes %>
+    <%= form.text_field :notes, class:"form-control" %>
   </div>
   <br />
   <div class="actions">
-    <%= form.submit class:"btn btn-warning" %>
+    <%= form.submit class:"btn btn-warning btn-lg" %>
   </div>
 <% end %>

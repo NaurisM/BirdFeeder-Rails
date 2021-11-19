@@ -20,7 +20,7 @@
         <td><%= observation.notes %></td>
         <td><%= link_to 'Show', observation %></td>
         <td><%= link_to 'Edit', edit_observation_path(observation) %></td>
-        <td><%= link_to 'Destroy', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'Add Observation', new_observation_path, class:"btn btn-warning" %>
+<%= link_to 'Add Observation', new_observation_path, class:"btn btn-warning btn-lg" %>
