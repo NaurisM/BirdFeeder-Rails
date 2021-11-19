@@ -13,6 +13,7 @@
 
   <tbody>
     <% @observations.each do |observation| %>
+      <% if observation.user == current_user %>
       <tr>
         <td><%= observation.season %></td>
         <td><%= observation.name %></td>
@@ -22,6 +23,7 @@
         <td><%= link_to 'Edit', edit_observation_path(observation) %></td>
         <td><%= link_to 'Delete', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

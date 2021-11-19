@@ -30,7 +30,13 @@
     <%= form.label :notes %>
     <%= form.text_field :notes, class:"form-control" %>
   </div>
+
+  <div>
+    <%= form.number_field :user_id, id: :observation_user_id, class:"form-control", value:current_user.id, type: :hidden %>
+  </div>
+
   <br />
+
   <div class="actions">
     <%= form.submit class:"btn btn-warning btn-lg" %>
   </div>
