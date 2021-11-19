@@ -6,6 +6,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to 'Add observation', new_observation_path, class:"nav-link" %>
         </li>
@@ -13,12 +14,23 @@
           <a class="nav-link" href="#">Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+          <%= link_to 'Profile', edit_user_registration_path, class:"nav-link" %>
         </li>
+        <% end %>
       </ul>
       <div class="text-end">
-        <button type="button" class="btn btn-warning btn-sm me-2">Login</button>
-        <button type="button" class="btn btn-warning btn-sm">Sign Up</button>
+        <% if user_signed_in? %>
+        <button type="button" class="btn btn-warning btn-sm">
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, style:"text-decoration:none; color:#000;" %>
+        </button>
+        <% else %>
+        <button type="button" class="btn btn-warning btn-sm me-2">
+          <%= link_to 'Log In', new_user_session_path, style:"text-decoration:none; color:#000;" %>
+        </button>
+        <button type="button" class="btn btn-warning btn-sm">
+          <%= link_to 'Sign Up', new_user_registration_path, style:"text-decoration:none; color:#000;" %>
+        </button>
+        <% end %>
       </div>
     </div>
   </div>
