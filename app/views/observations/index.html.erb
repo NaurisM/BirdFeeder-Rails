@@ -1,33 +1,39 @@
-<h2>My Observations</h2>
+<% if user_signed_in? %>
 
-<table class="table table-bordered table-sm table-striped">
-  <thead class="table-dark">
-    <tr>
-      <th>Season</th>
-      <th>Name</th>
-      <th>Max number</th>
-      <th>Notes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h2>My Observations</h2>
 
-  <tbody>
-    <% @observations.each do |observation| %>
-      <% if observation.user == current_user %>
+  <table class="table table-bordered table-sm table-striped">
+    <thead class="table-dark">
       <tr>
-        <td><%= observation.season %></td>
-        <td><%= observation.name %></td>
-        <td><%= observation.max_number %></td>
-        <td><%= observation.notes %></td>
-        <td><%= link_to 'Show', observation %></td>
-        <td><%= link_to 'Edit', edit_observation_path(observation) %></td>
-        <td><%= link_to 'Delete', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Season</th>
+        <th>Name</th>
+        <th>Max number</th>
+        <th>Notes</th>
+        <th colspan="3"></th>
       </tr>
+    </thead>
+
+    <tbody>
+      <% @observations.each do |observation| %>
+        <% if observation.user == current_user %>
+        <tr>
+          <td><%= observation.season %></td>
+          <td><%= observation.name %></td>
+          <td><%= observation.max_number %></td>
+          <td><%= observation.notes %></td>
+          <td><%= link_to 'Show', observation %></td>
+          <td><%= link_to 'Edit', edit_observation_path(observation) %></td>
+          <td><%= link_to 'Delete', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<%= link_to 'Add Observation', new_observation_path, class:"btn btn-warning btn-lg" %>
+  <%= link_to 'Add Observation', new_observation_path, class:"btn btn-warning btn-lg" %>
+
+<% else %>
+  <h1>Te Būs Titullapa</h1>
+<% end %>
