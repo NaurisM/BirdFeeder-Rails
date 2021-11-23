@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
+<h2>Birds</h2>
 
-<h1>Birds</h1>
-
-<table>
-  <thead>
+<table class="table table-bordered table-sm table-striped">
+  <thead class="table-dark">
     <tr>
       <th>Name</th>
       <th>Image</th>
@@ -18,7 +16,7 @@
         <td><%= bird.image %></td>
         <td><%= link_to 'Show', bird %></td>
         <td><%= link_to 'Edit', edit_bird_path(bird) %></td>
-        <td><%= link_to 'Destroy', bird, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', bird, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Bird', new_bird_path %>
+<%= link_to 'Add Bird', new_bird_path, class:"btn btn-warning btn-lg" %>
