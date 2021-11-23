@@ -16,9 +16,11 @@
         <li class="nav-item">
           <%= link_to 'Profile', edit_user_registration_path, class:"nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to 'Birds', birds_path, class:"nav-link" %>
-        </li>
+          <% if current_user.admin %>
+            <li class="nav-item">
+              <%= link_to 'Birds', birds_path, class:"nav-link" %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
       <div class="text-end">
