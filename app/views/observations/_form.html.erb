@@ -18,7 +18,7 @@
 
   <div class="field mb-3">
     <%= form.label :name %>
-    <%= form.text_field :name, class:"form-control" %>
+    <%= form.select :name, Bird.all.collect {|bird| [ bird.name ] }, { include_blank: true }, class:"form-select mb-3" %>
   </div>
 
   <div class="field mb-3">
@@ -33,6 +33,10 @@
 
   <div>
     <%= form.number_field :user_id, id: :observation_user_id, class:"form-control", value:current_user.id, type: :hidden %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.number_field :bird_id, id: :observation_bird_id, class:"form-control", value:Bird.where(name: observation.name).ids, type: :hidden %>
   </div>
 
   <br />

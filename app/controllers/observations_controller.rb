@@ -54,15 +54,10 @@ class ObservationsController < ApplicationController
   def destroy
     @observation.destroy
     respond_to do |format|
-      format.html { redirect_to observations_url, notice: "Observation was successfully destroyed." }
+      format.html { redirect_to observations_url, notice: "Observation was successfully deleted." }
       format.json { head :no_content }
     end
   end
-
-  # def correct_user
-  #   @observation = current_user.observations.find_by(id: params[:id])
-  #   redirect_to observations_path, notice: "Not authorized to edit this observation" if @observation.nil?
-  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -72,6 +67,6 @@ class ObservationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def observation_params
-      params.require(:observation).permit(:season, :name, :max_number, :notes, :user_id)
+      params.require(:observation).permit(:season, :name, :max_number, :notes, :user_id, :bird_id)
     end
 end

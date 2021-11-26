@@ -1,5 +1,9 @@
 <div class="card" style="width: 40rem; margin: auto;">
-  <%= image_tag("squirrel.jpg") %>
+  <% 
+    @bird_id = Bird.where(name: @observation.name).ids 
+    @bird_img = Bird.find(@bird_id[0]).image
+  %>
+  <%= image_tag( @bird_img ) %>
   <div class="card-body">
     <h3 class="card-title">
       <%= @observation.name %>
