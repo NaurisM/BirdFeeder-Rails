@@ -9,7 +9,6 @@
         <th>Name</th>
         <th>Max number</th>
         <th>Notes</th>
-        <th colspan="3"></th>
       </tr>
     </thead>
 
@@ -18,12 +17,11 @@
         <% if observation.user == current_user %>
         <tr>
           <td><%= observation.season %></td>
-          <td><%= observation.name %></td>
+          <td><%= link_to observation.name, observation %></td>
           <td><%= observation.max_number %></td>
           <td><%= observation.notes %></td>
-          <td><%= link_to 'Show', observation %></td>
-          <td><%= link_to 'Edit', edit_observation_path(observation) %></td>
-          <td><%= link_to 'Delete', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <!--<td><%= link_to 'Edit', edit_observation_path(observation) %></td>
+          <td><%= link_to 'Delete', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
         </tr>
         <% end %>
       <% end %>

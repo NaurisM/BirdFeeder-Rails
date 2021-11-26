@@ -19,6 +19,7 @@
   <div class="field mb-3">
     <%= form.label :name %>
     <%= form.select :name, Bird.all.collect {|bird| [ bird.name ] }, { include_blank: true }, class:"form-select mb-3" %>
+    <% Bird.where(name: observation.name).ids %>
   </div>
 
   <div class="field mb-3">
