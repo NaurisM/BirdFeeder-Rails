@@ -13,7 +13,6 @@ class ObservationsController < ApplicationController
 
   # GET /observations/new
   def new
-    #@observation = Observation.new
     @observation = current_user.observations.build
   end
 
@@ -23,7 +22,6 @@ class ObservationsController < ApplicationController
 
   # POST /observations or /observations.json
   def create
-    #@observation = Observation.new(observation_params)
     @observation = current_user.observations.build(observation_params)
 
     respond_to do |format|

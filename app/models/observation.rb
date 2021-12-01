@@ -1,4 +1,4 @@
 class Observation < ApplicationRecord
   belongs_to :user
-  belongs_to :bird
+  has_one :bird
 end
