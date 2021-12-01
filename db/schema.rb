@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_174711) do
+ActiveRecord::Schema.define(version: 2021_11_23_172935) do
 
   create_table "birds", force: :cascade do |t|
     t.string "name"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2021_11_23_174711) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-    t.integer "bird_id"
     t.index ["user_id"], name: "index_observations_on_user_id"
   end
 
