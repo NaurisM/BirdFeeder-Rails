@@ -20,8 +20,6 @@
           <td><%= link_to observation.name, observation %></td>
           <td><%= observation.max_number %></td>
           <td><%= observation.notes %></td>
-          <!--<td><%= link_to 'Edit', edit_observation_path(observation) %></td>
-          <td><%= link_to 'Delete', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
         </tr>
         <% end %>
       <% end %>
@@ -33,5 +31,27 @@
   <%= link_to 'Add Observation', new_observation_path, class:"btn btn-warning btn-lg" %>
 
 <% else %>
-  <h1>Te Būs Titullapa</h1>
+<div class="container">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner" style="padding:0;max-width:100%;height:auto;">
+      <div class="carousel-item active">
+        <%= image_tag("feeder1") %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("feeder2") %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("feeder3") %>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
 <% end %>
