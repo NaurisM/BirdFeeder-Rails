@@ -20,6 +20,9 @@ class ObservationsController < ApplicationController
   def edit
   end
 
+  def gallery
+  end
+
   # POST /observations or /observations.json
   def create
     @observation = current_user.observations.build(observation_params)
@@ -65,6 +68,6 @@ class ObservationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def observation_params
-      params.require(:observation).permit(:season, :name, :max_number, :notes, :user_id, :bird_id)
+      params.require(:observation).permit(:season, :name, :max_number, :notes, :user_id)
     end
 end

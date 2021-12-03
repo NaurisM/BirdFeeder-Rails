@@ -1,0 +1,15 @@
+
+<% @bird_names = Observation.where(user_id: current_user.id).all.collect { |obs| [ obs.name ] } %><br/>
+
+<div class="row row-cols-1 row-cols-md-3">    
+  <% @bird_names.each do |name| %>
+    <% @bird_id = Bird.where(name: name.flatten).ids %>
+    <% @bird_img = Bird.find(@bird_id).collect { |bird| [bird.image] } %>
+    <% @image = @bird_img.flatten %>
+
+    <div class="card" style="padding:0;max-width:100%;height:auto;">  
+      <%= image_tag(@image[0]) %>
+    </div>
+
+  <% end %>
+</div>
